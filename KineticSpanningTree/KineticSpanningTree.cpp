@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  KineticSpanningTree.cpp
 //  KineticSpanningTree
 //
 //  Created by Erik A. Kvam Garí on 7/11/19.
@@ -7,7 +7,9 @@
 //
 
 #include "KineticSpanningTree.hpp"
-
-int main() {
-    KineticSpanningTree kds = KineticSpanningTree();
+KineticSpanningTree::KineticSpanningTree(){
+    time = 0;
+    graph = Graph();
+    MST = graph.calculateMST();
+    kineticGraph = KineticGraph();
 }
