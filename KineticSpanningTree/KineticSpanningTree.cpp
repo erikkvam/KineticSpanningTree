@@ -9,7 +9,6 @@
 #include "KineticSpanningTree.hpp"
 KineticSpanningTree::KineticSpanningTree(){
     time = 0;
-    graph = Graph();
-    MST = graph.calculateMST();
     kineticGraph = KineticGraph();
+    MST = kineticGraph.calculateMST();
 }
