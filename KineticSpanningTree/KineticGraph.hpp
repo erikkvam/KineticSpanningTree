@@ -12,10 +12,16 @@
 
 class KineticGraph: public Graph {
 private:
-    list<list<float>> adjacency_weights (float t);
+    int size;
+    list<list<pair<float, float>>> adjacencyParameters;
+    
+    float SELF = -1;
+    float UNCONNECTED = -2;
     
 public:
     KineticGraph();
+    KineticGraph(float t);
+    KineticGraph(string name);
 };
 
 #endif /* KineticGraph_hpp */

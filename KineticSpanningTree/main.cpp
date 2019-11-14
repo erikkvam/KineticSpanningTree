@@ -7,7 +7,9 @@
 //
 
 #include "KineticSpanningTree.hpp"
+#include <string>
+#include <iostream>
 
 int main() {
-    KineticSpanningTree kds = KineticSpanningTree();
+    KineticSpanningTree kds = KineticSpanningTree("example");
 }

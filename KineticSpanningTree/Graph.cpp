@@ -8,7 +8,7 @@
 
 #include "Graph.hpp"
 Graph::Graph(){
-    nodes = list<Node>(1, Node());
+    nodes = list<Node>();
     adjacencies = list<list<float>>(1, list<float>(1, 0));
 }
 

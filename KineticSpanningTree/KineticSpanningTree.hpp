@@ -13,12 +13,16 @@
 #include "KineticGraph.hpp"
 
 class KineticSpanningTree {
-    int time;
-    Graph graph;
+private:
     Graph MST;
     KineticGraph kineticGraph;
+
+    KineticSpanningTree();
+    
+protected:
+    float t;
     
 public:
-    KineticSpanningTree();
+    KineticSpanningTree(string name);
 };
 #endif /* KineticSpanningTree_hpp */

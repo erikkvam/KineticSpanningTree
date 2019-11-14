@@ -7,8 +7,14 @@
 //
 
 #include "KineticSpanningTree.hpp"
-KineticSpanningTree::KineticSpanningTree(){
-    time = 0;
-    kineticGraph = KineticGraph();
-    MST = kineticGraph.calculateMST();
+#include <string>
+
+KineticSpanningTree::KineticSpanningTree(){}
+
+KineticSpanningTree::KineticSpanningTree(string name){
+    if (name == "example") {
+        t = 0;
+        kineticGraph = KineticGraph("example");
+        MST = kineticGraph.calculateMST();
+    }
 }

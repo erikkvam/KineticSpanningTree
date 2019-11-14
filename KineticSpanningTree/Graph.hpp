@@ -15,7 +15,7 @@ using namespace std;
 class Graph {
 protected:
     list<Node> nodes;
-    list<list<float> > adjacencies;
+    list<list<float>> adjacencies;
     
 public:
     Graph();
