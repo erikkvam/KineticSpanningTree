@@ -8,17 +8,27 @@
 
 #ifndef Graph_hpp
 #define Graph_hpp
+#include <map>
+#include <queue>
+#include <string>
 #include <list>
-#include "Node.hpp"
 using namespace std;
 
 class Graph {
 protected:
-    list<Node> nodes;
-    list<list<float>> adjacencies;
+    vector<string> nodes = vector<string>();
+    map<string, list<pair<string, double>>> adjacencies = map<string, list<pair<string, double>>>();
+    map<string, list<pair<string, double>>> MSTadjacencies = map<string, list<pair<string, double>>>();
+    
+    
+    typedef pair<double,string> weightedVertex;
+    typedef priority_queue<weightedVertex> priorityVertexQueue;
     
 public:
     Graph();
-    Graph calculateMST();
+    void calculateMST();
+    void add(string label, list<pair<string,double>> adjacencies);
+    double cost(string v, string w);
+    list<pair<string, double>> adjacent(string);
 };
 #endif /* Graph_hpp */

@@ -15,6 +15,6 @@ KineticSpanningTree::KineticSpanningTree(string name){
     if (name == "example") {
         t = 0;
         kineticGraph = KineticGraph("example");
-        MST = kineticGraph.calculateMST();
+        kineticGraph.calculateMST();
     }
 }

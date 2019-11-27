@@ -9,15 +9,13 @@
 #ifndef KineticGraph_hpp
 #define KineticGraph_hpp
 #include "Graph.hpp"
+#include <limits>
 
 class KineticGraph: public Graph {
 private:
     int size;
     list<list<pair<float, float>>> adjacencyParameters;
-    
-    float SELF = -1;
-    float UNCONNECTED = -2;
-    
+        
 public:
     KineticGraph();
     KineticGraph(float t);
