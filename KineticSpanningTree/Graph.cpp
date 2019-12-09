@@ -10,6 +10,7 @@
 #include <limits>
 #include <queue>
 #include <map>
+#include <iostream>
 
 Graph::Graph(){}
 
@@ -43,32 +44,50 @@ void Graph::calculateMST(){
         Q.pop();
         string label = v.second;
         //Add v to F and, if E[v] is not the special flag value, also add E[v] to F
-        F.add(label, adjacent(label));
+        F.addVertex(label);
         if (E[label] != "") {
-            F.add(E[label], adjacent(E[label]));
+            F.addEdge(label, E[label], C[label]);
         };
         //Loop over the edges vw connecting v to other vertices w.
         for (pair<string, double> edge : adjacent(label)) {
             //For each such edge, if w still belongs to Q and vw has smaller weight than C[w], perform the following steps:
-            if (edge.second < C[edge.first]) {
+            bool wIsInQ = false;
+            for (weightedVertex x : Q) if (true) wIsInQ = true;
+            if (edge.second < C[edge.first] && wIsInQ) {
                 //Set C[w] to the cost of edge vw
                 C[edge.first] = cost(label, edge.first);
                 //Set E[w] to point to edge vw.
                 E[edge.first] = label;
             }
         }
-        
+        cout << "The partial MST is:" << endl;
+        F.print();
     }
+    MSTadjacencies = F.adjacencies;
 }
 
 
-//Graph add(string label, list<pair<string,double>> adjacencies);
-void Graph::add(string node, list<pair<string,double>> adjacent_to){
-    nodes.push_back(node);
-    for (pair<string, double> adjacency : adjacent_to){
-        adjacencies[node].push_back(adjacency);
-        adjacencies[adjacency.first].push_back(pair<string, double>(node,adjacency.second));
-    };
+void Graph::addVertex(string node){
+    bool found = false;
+    for (string member : nodes) {
+        if (member == node) found = true;
+    }
+    
+    if (!found) {
+        nodes.push_back(node);
+    }
+}
+
+void Graph::addEdge(string v, string w, double weight){
+    bool found = false;
+    for (pair<string, double> vAdj : adjacencies[v]){
+        if (vAdj.first == w) found = true;
+    }
+    
+    if (!found) {
+        adjacencies[v].push_back(pair<string, double>(w,weight));
+        adjacencies[w].push_back(pair<string, double>(v,weight));
+    }
 }
 
 double Graph::cost(string v, string w){
@@ -84,3 +103,25 @@ list<pair<string, double>> Graph::adjacent(string v){
     return adjacencies[v];
 }
 
+void Graph::print(){
+   for (string node : nodes) {
+       if (adjacencies[node].empty()) {
+           cout << "Node " << node << " has no adjacencies." << endl;
+       } else {
+           cout << "Node " << node << " is adjacent to ";
+           bool first = true;
+           for (pair<string, double> adj : adjacencies[node]) {
+               if (first) {
+                   first = false;
+               } else {
+                   cout << ", ";
+               }
+               bool mst = !MSTadjacencies[node].empty();
+               cout << adj.first << "(" << adj.second << ")";
+               if (mst) cout << " MST";
+           }
+           cout << endl;
+       }
+   }
+   cout << endl;
+}

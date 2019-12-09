@@ -8,6 +8,8 @@
 
 #include "KineticSpanningTree.hpp"
 #include <string>
+#include <iostream>
+using namespace std;
 
 KineticSpanningTree::KineticSpanningTree(){}
 
@@ -18,3 +20,16 @@ KineticSpanningTree::KineticSpanningTree(string name){
         kineticGraph.calculateMST();
     }
 }
+
+void KineticSpanningTree::print(){
+    cout << "Printing a Kinetic Spanning Tree" << endl;
+    
+    cout << "At time " << t << ", the tree looks like:" << endl;
+    kineticGraph.print();
+    
+    cout << endl << endl;
+    
+    cout << "At time " << t << ", the MST looks like:" << endl;
+    MST.print();
+}
+    

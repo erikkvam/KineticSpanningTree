@@ -24,5 +24,6 @@ protected:
     
 public:
     KineticSpanningTree(string name);
+    void print();
 };
 #endif /* KineticSpanningTree_hpp */

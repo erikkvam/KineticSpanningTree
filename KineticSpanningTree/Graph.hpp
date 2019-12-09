@@ -30,5 +30,8 @@ public:
     void add(string label, list<pair<string,double>> adjacencies);
     double cost(string v, string w);
     list<pair<string, double>> adjacent(string);
+    void print();
+    void addVertex(string v);
+    void addEdge(string v, string w, double weight);
 };
 #endif /* Graph_hpp */

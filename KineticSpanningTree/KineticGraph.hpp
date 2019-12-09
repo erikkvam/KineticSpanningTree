@@ -10,11 +10,12 @@
 #define KineticGraph_hpp
 #include "Graph.hpp"
 #include <limits>
+#include <queue>
 
 class KineticGraph: public Graph {
 private:
-    int size;
-    list<list<pair<float, float>>> adjacencyParameters;
+    list<list<pair<double, double>>> adjacencyParameters;
+    priority_queue<Event> events;
         
 public:
     KineticGraph();

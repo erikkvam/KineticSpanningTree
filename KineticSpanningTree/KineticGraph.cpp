@@ -10,9 +10,9 @@
 #include <string>
 #include <iterator>
 #include <list>
+#include <iostream>
 
 KineticGraph::KineticGraph(){
-    adjacencyParameters = list<list<pair<float, float>>>(0);
 }
 
 //KineticGraph::KineticGraph(float t){
@@ -35,9 +35,17 @@ KineticGraph::KineticGraph(string name){
         nodes.push_back("a");
         nodes.push_back("b");
         nodes.push_back("c");
+        nodes.push_back("d");
+
         
-        adjacencies["a"].push_back(pair<string, double>("b",2));
-        adjacencies["b"].push_back(pair<string, double>("a",2));
+        adjacencies["a"].push_back(pair<string, double>("b",3));
+        adjacencies["a"].push_back(pair<string, double>("c",2));
+        adjacencies["b"].push_back(pair<string, double>("a",3));
+        adjacencies["b"].push_back(pair<string, double>("d",4));
+        adjacencies["c"].push_back(pair<string, double>("a",2));
+        adjacencies["c"].push_back(pair<string, double>("d",1));
+        adjacencies["d"].push_back(pair<string, double>("c",1));
+        adjacencies["d"].push_back(pair<string, double>("a",4));
     }
     else KineticGraph();
 }
