@@ -8,6 +8,8 @@
 
 #ifndef Graph_hpp
 #define Graph_hpp
+#include "Event.cpp"
+#include "Certificate.cpp"
 #include <map>
 #include <queue>
 #include <string>
