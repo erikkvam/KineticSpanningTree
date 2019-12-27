@@ -8,9 +8,9 @@
 
 #ifndef KineticSpanningTree_hpp
 #define KineticSpanningTree_hpp
-
-#include "Graph.hpp"
-#include "KineticGraph.hpp"
+#include <string>
+#include <vector>
+using namespace std;
 
 class KineticSpanningTree {
 private:
@@ -37,25 +37,23 @@ private:
         EventType type;
         int time;
         int v, w, a, b;
-    }
+    };
     
     vector<vertex> vertices;
     vector<edge> edges;
     vector<int> MSTedges;
     
-    vector<Event>; //should act as a priority queue
+    vector<Event> events; //should act as a priority queue
     
     typedef vector<vertex> cluster;
     vector<cluster> clusters;
     
     struct swap {
         int v, w, x, y; //delete v-w and add x-y
-    }
+    };
     swap nextIntra, nextInter, nextDual;
 
     
-
-    KineticSpanningTree();
     
 protected:
     float t;
