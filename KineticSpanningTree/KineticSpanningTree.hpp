@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <set>
 using namespace std;
 
 class KineticSpanningTree {
@@ -46,21 +47,23 @@ private:
         }
     };
     
-    vector<vertex> vertices;
-    vector<edge> edges;
-    vector<int> MSTedges;
+    set<vertex> vertices;
+    set<edge> edges;
+    set<int> MSTedges;
     
-    priority_queue<event, vector<event>, lessEvent> events; //should act as a priority queue
+    priority_queue<event, vector<event>, lessEvent> events;
     
     typedef vector<vertex> cluster;
-    vector<cluster> clusters;
-    vector<vector<vector<int>>> edgesBetweenClusters;
+    set<cluster> clusters;
+    vector<vector<set<int>>> edgesBetweenClusters;
     
     struct swap {
         int v, w, x, y, a, b; //delete v-w and add x-y (weight a+bt)
     };
     swap nextIntra, nextInter, nextDual;
-
+    const bool sameSwap(const swap& s, const event& e){
+        return e.type == MSTSwap and e.v == s.v and e.w == s.w and e.a == s.x and e.b == s.y;
+    }
     
     
 protected:

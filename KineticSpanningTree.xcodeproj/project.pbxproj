@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		032CD8FB2374712B00D40E32 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD8FA2374712B00D40E32 /* main.cpp */; };
-		032CD90823747BB700D40E32 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD90623747BB700D40E32 /* Graph.cpp */; };
 		032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */; };
-		032CD90E23747CD200D40E32 /* KineticGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD90C23747CD200D40E32 /* KineticGraph.cpp */; };
-		03DC36A62374809300C22349 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03DC36A42374809300C22349 /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,14 +26,8 @@
 /* Begin PBXFileReference section */
 		032CD8F72374712B00D40E32 /* KineticSpanningTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KineticSpanningTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		032CD8FA2374712B00D40E32 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		032CD90623747BB700D40E32 /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
-		032CD90723747BB700D40E32 /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
 		032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KineticSpanningTree.cpp; sourceTree = "<group>"; };
 		032CD90A23747C3600D40E32 /* KineticSpanningTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KineticSpanningTree.hpp; sourceTree = "<group>"; };
-		032CD90C23747CD200D40E32 /* KineticGraph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KineticGraph.cpp; sourceTree = "<group>"; };
-		032CD90D23747CD200D40E32 /* KineticGraph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KineticGraph.hpp; sourceTree = "<group>"; };
-		03DC36A42374809300C22349 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		03DC36A52374809300C22349 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				032CD8FA2374712B00D40E32 /* main.cpp */,
-				032CD90623747BB700D40E32 /* Graph.cpp */,
-				032CD90723747BB700D40E32 /* Graph.hpp */,
 				032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */,
 				032CD90A23747C3600D40E32 /* KineticSpanningTree.hpp */,
-				032CD90C23747CD200D40E32 /* KineticGraph.cpp */,
-				032CD90D23747CD200D40E32 /* KineticGraph.hpp */,
-				03DC36A42374809300C22349 /* Node.cpp */,
-				03DC36A52374809300C22349 /* Node.hpp */,
 			);
 			path = KineticSpanningTree;
 			sourceTree = "<group>";
@@ -108,7 +93,7 @@
 		032CD8EF2374712B00D40E32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Universitat Politècnica de Catalunya";
 				TargetAttributes = {
 					032CD8F62374712B00D40E32 = {
@@ -140,10 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032CD8FB2374712B00D40E32 /* main.cpp in Sources */,
-				032CD90823747BB700D40E32 /* Graph.cpp in Sources */,
-				032CD90E23747CD200D40E32 /* KineticGraph.cpp in Sources */,
 				032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */,
-				03DC36A62374809300C22349 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +244,7 @@
 		032CD8FF2374712B00D40E32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCGM6J7RE7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -272,6 +255,7 @@
 		032CD9002374712B00D40E32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCGM6J7RE7;
 				ENABLE_HARDENED_RUNTIME = YES;
