@@ -30,8 +30,6 @@ KineticSpanningTree::KineticSpanningTree(string name){
     recalculateIntra();
     recalculateInter();
     recalculateDual();
-    
-    
 }
 
 void KineticSpanningTree::print(){
