@@ -14,11 +14,24 @@ using namespace std;
 KineticSpanningTree::KineticSpanningTree(string name){
     if (name == "example") {
         t = 0;
-        vertices = vector<vertex>(0);
-        edges = vector<edge>(0);
-        MSTedges = vector<int>(0);
-        clusters = vector<cluster>(0);
+        vertices.clear();
+        edges.clear();
+        MSTedges.clear();
+        clusters.clear();
     }
+    else {
+        t = 0;
+        vertices.clear();
+        edges.clear();
+        MSTedges.clear();
+        clusters.clear();
+    }
+    transformGraph();
+    recalculateIntra();
+    recalculateInter();
+    recalculateDual();
+    
+    
 }
 
 void KineticSpanningTree::print(){
