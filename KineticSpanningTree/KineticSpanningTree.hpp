@@ -10,6 +10,7 @@
 #define KineticSpanningTree_hpp
 #include <string>
 #include <vector>
+#include <queue>
 using namespace std;
 
 class KineticSpanningTree {
@@ -25,7 +26,7 @@ private:
     };
     
     enum EventType {VertexDeletion, EdgeDeletion, EdgeWeightUpdate, VertexAddition, EdgeAddition, MSTSwap};
-    struct Event {
+    struct event {
         /*
          VertexDeletion  : delete vertex v
          EdgeDeletion    : delete edge v-w
@@ -37,19 +38,26 @@ private:
         EventType type;
         int time;
         int v, w, a, b;
+
+    };
+    struct lessEvent {
+        bool operator() (const event& x, const event& y) {
+            return x.time < y.time;
+        }
     };
     
     vector<vertex> vertices;
     vector<edge> edges;
     vector<int> MSTedges;
     
-    vector<Event> events; //should act as a priority queue
+    priority_queue<event, vector<event>, lessEvent> events; //should act as a priority queue
     
     typedef vector<vertex> cluster;
     vector<cluster> clusters;
+    vector<vector<vector<int>>> edgesBetweenClusters;
     
     struct swap {
-        int v, w, x, y; //delete v-w and add x-y
+        int v, w, x, y, a, b; //delete v-w and add x-y (weight a+bt)
     };
     swap nextIntra, nextInter, nextDual;
 
