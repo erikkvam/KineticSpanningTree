@@ -61,9 +61,7 @@ private:
         int v, w, x, y, a, b; //delete v-w and add x-y (weight a+bt)
     };
     swap nextIntra, nextInter, nextDual;
-    const bool sameSwap(const swap& s, const event& e){
-        return e.type == MSTSwap and e.v == s.v and e.w == s.w and e.a == s.x and e.b == s.y;
-    }
+    const bool sameSwap(const swap& s, const event& e);
     
     
 protected:

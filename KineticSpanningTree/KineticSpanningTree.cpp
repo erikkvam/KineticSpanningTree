@@ -107,3 +107,6 @@ void KineticSpanningTree::advanceTimeUntil(float timeLimit){
     }
 }
     
+const bool KineticSpanningTree::sameSwap(const swap& s, const event& e){
+    return e.type == MSTSwap and e.v == s.v and e.w == s.w and e.a == s.x and e.b == s.y;
+}
