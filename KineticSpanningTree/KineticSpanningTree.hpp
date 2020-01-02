@@ -20,11 +20,23 @@ private:
         string label = "";
         int id;
     };
+    struct vertexLess{
+        const bool operator()(const vertex& a, const vertex& b){
+            return a.id < b.id;
+        }
+    };
     struct edge {
         int id;
         int v, w; //vertex IDs
         double a, b; //cost = a+bt
     };
+    void addEdge(const int& v, const int& w, const float& a, const float& b);
+    void deleteEdge(const edge& e);
+    void deleteEdge(const int& v, const int& w);
+    void addVertex(const int& v);
+    void deleteVertex(const int& v);
+    vector<edge> findEdgesThatComeFrom(const int& v);
+    void transformGraph();
     
     enum EventType {VertexDeletion, EdgeDeletion, EdgeWeightUpdate, VertexAddition, EdgeAddition, MSTSwap};
     struct event {
@@ -47,7 +59,7 @@ private:
         }
     };
     
-    set<vertex> vertices;
+    vector<vertex> vertices;
     set<edge> edges;
     set<int> MSTedges;
     
@@ -62,7 +74,11 @@ private:
     };
     swap nextIntra, nextInter, nextDual;
     const bool sameSwap(const swap& s, const event& e);
-    
+    void recalculateIntra();
+    void recalculateInter();
+    void recalculateDual();
+    void performSwap(const swap& s);
+    void performSwap(const event& e); //e should be an MSTswap
     
 protected:
     float t;

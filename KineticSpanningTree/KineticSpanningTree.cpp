@@ -57,7 +57,7 @@ void KineticSpanningTree::advanceTimeUntil(float timeLimit){
                 break;
                 
             case VertexAddition:
-                addVertex(x.v, x.w);
+                addVertex(x.v);
                 break;
                 
             case EdgeDeletion:
@@ -77,10 +77,10 @@ void KineticSpanningTree::advanceTimeUntil(float timeLimit){
                 break;
                 
             case VertexDeletion:
-                for (edge e : findEdgesThatComeFrom(x.v, x.w)) {
+                for (edge e : findEdgesThatComeFrom(x.v)) {
                     deleteEdge(e);
                 }
-                deleteVertex(x.v, x.w);
+                deleteVertex(x.v);
                 break;
                 
             case EdgeWeightUpdate:
@@ -109,4 +109,59 @@ void KineticSpanningTree::advanceTimeUntil(float timeLimit){
     
 const bool KineticSpanningTree::sameSwap(const swap& s, const event& e){
     return e.type == MSTSwap and e.v == s.v and e.w == s.w and e.a == s.x and e.b == s.y;
+}
+
+void KineticSpanningTree::deleteEdge(const edge &e){
+    //Delete From MST
+    //Delete from graph
+}
+
+void KineticSpanningTree::deleteEdge(const int &v, const int &w){
+    edge e;
+    e.v = v;
+    e.w = w;
+    
+    deleteEdge(e);
+}
+
+void KineticSpanningTree::performSwap(const swap &s){
+    //perform the swap
+}
+
+void KineticSpanningTree::performSwap(const event &e){
+    swap s;
+    s.v = e.v;
+    s.w = e.w;
+    s.x = e.a;
+    s.y = e.b;
+    
+    
+    for (edge f : edges) {
+        if (f.v == e.v and f.w == e.w) {
+            s.a = f.a;
+            s.b = f.b;
+        }
+    }
+    
+    performSwap(s);
+}
+
+void KineticSpanningTree::deleteVertex(const int &id){
+    for (edge e : edges) {
+        if(e.v == id or e.w == id) deleteEdge(e);
+    }
+    //recalculate all needed structures
+    vertex v;
+    v.id = id;
+    vector<vertex>::iterator it = vertices.begin();
+    for (int i = 0; i < id; i++) it++;
+    vertices.erase(it);
+}
+
+vector<KineticSpanningTree::edge> KineticSpanningTree::findEdgesThatComeFrom(const int &v){
+    vector<edge> adjacent = vector<edge>(0);
+    for(edge e : edges){
+        if(e.v == v || e.w == v) adjacent.push_back(e);
+    }
+    return adjacent;
 }
