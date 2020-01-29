@@ -20,5 +20,8 @@ public:
     bool add(const int& u, const int& v, const int& a, const int& b);
     bool del(const int& u, const int& v);
     bool modify(const int& u, const int& v, const int& a, const int& b);
+    
+    bool inV(const int& v);
+    bool inE(const int& u, const int& v);
 }
 #endif /* Graph_hpp */
