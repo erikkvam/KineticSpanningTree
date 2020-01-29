@@ -23,3 +23,7 @@ bool Graph::add(const int& u, const int& v, const int& a, const int& b){
         return false;
     }
 }
+
+bool Graph::inV (const int& v){
+    return V.count(v) > 0;
+}
