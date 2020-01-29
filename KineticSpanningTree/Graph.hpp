@@ -10,5 +10,12 @@
 #define Graph_hpp
 
 #include <stdio.h>
-
+#include <set>
+class Graph {
+private:
+    set<int> V;
+    list<list<int>> E;
+    
+    int w[][];
+}
 #endif /* Graph_hpp */
