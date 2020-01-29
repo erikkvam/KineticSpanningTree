@@ -30,7 +30,7 @@ bool Graph::inV(const int& v){
 
 bool Graph::inE(const int& u, const int& v){
     list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
-    for (pair<int,pair<int,int> vertex : (*uPos)) {
+    for (pair<int,pair<int,int>> vertex : (*uPos)) {
         if (vertex.first == v) return true;
     }
     return false;
