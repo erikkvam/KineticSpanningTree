@@ -11,7 +11,9 @@
 
 #include <stdio.h>
 class Certificate {
-    const int u, v, x, y;
+public:
+    const int u, v, x, y; //The swap (u,v)<->(x,y) is positive, with (u,v) in the MST and (x,y) not in the MST
+    //bool?
 };
 
 #endif /* Certificate_hpp */
