@@ -11,10 +11,12 @@
 
 #include <stdio.h>
 #include <set>
+#include <list>
+using namespace std;
 class Graph {
 private:
     set<int> V;
-    list<list<pair<int,pair<int,int>>> Ew; //Ew[v] = (u,(a,b)) if there exists an edge uv with cost at+b
+    list<list<pair<int,pair<int,int>>>> Ew; //Ew[v] = (u,(a,b)) if there exists an edge uv with cost at+b
     
 public:
     bool add(const int& u, const int& v, const int& a, const int& b);
@@ -23,5 +25,5 @@ public:
     
     bool inV(const int& v);
     bool inE(const int& u, const int& v);
-}
+};
 #endif /* Graph_hpp */

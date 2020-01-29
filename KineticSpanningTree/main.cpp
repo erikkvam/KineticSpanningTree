@@ -11,6 +11,7 @@
 #include <iostream>
 
 int main() {
-    KineticSpanningTree kds = KineticSpanningTree("example");
-    kds.print();
+    //KineticSpanningTree kds = KineticSpanningTree("example");
+    //kds.print();
+    return 0;
 }

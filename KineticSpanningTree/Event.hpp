@@ -10,6 +10,7 @@
 #define Event_hpp
 
 #include <stdio.h>
+#include "Certificate.cpp"
 class Event {
 public:
     const float time;
