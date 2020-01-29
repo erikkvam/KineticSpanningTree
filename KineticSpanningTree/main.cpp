@@ -13,5 +13,4 @@
 int main() {
     //KineticSpanningTree kds = KineticSpanningTree("example");
     //kds.print();
-    return 0;
 }
