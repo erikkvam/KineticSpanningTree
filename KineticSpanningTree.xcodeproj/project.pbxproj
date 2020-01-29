@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032464E523E1F97100D7BBEE /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E323E1F97100D7BBEE /* Graph.cpp */; };
+		032464E823E1F99400D7BBEE /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E623E1F99400D7BBEE /* Event.cpp */; };
+		032464EB23E1F9A600D7BBEE /* Certificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E923E1F9A600D7BBEE /* Certificate.cpp */; };
 		032CD8FB2374712B00D40E32 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD8FA2374712B00D40E32 /* main.cpp */; };
 		032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		032464E323E1F97100D7BBEE /* Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		032464E423E1F97100D7BBEE /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
+		032464E623E1F99400D7BBEE /* Event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		032464E723E1F99400D7BBEE /* Event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Event.hpp; sourceTree = "<group>"; };
+		032464E923E1F9A600D7BBEE /* Certificate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Certificate.cpp; sourceTree = "<group>"; };
+		032464EA23E1F9A600D7BBEE /* Certificate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Certificate.hpp; sourceTree = "<group>"; };
 		032CD8F72374712B00D40E32 /* KineticSpanningTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KineticSpanningTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		032CD8FA2374712B00D40E32 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KineticSpanningTree.cpp; sourceTree = "<group>"; };
@@ -60,9 +69,15 @@
 		032CD8F92374712B00D40E32 /* KineticSpanningTree */ = {
 			isa = PBXGroup;
 			children = (
+				032464E323E1F97100D7BBEE /* Graph.cpp */,
+				032464E423E1F97100D7BBEE /* Graph.hpp */,
 				032CD8FA2374712B00D40E32 /* main.cpp */,
 				032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */,
 				032CD90A23747C3600D40E32 /* KineticSpanningTree.hpp */,
+				032464E623E1F99400D7BBEE /* Event.cpp */,
+				032464E723E1F99400D7BBEE /* Event.hpp */,
+				032464E923E1F9A600D7BBEE /* Certificate.cpp */,
+				032464EA23E1F9A600D7BBEE /* Certificate.hpp */,
 			);
 			path = KineticSpanningTree;
 			sourceTree = "<group>";
@@ -124,7 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032464E823E1F99400D7BBEE /* Event.cpp in Sources */,
 				032CD8FB2374712B00D40E32 /* main.cpp in Sources */,
+				032464EB23E1F9A600D7BBEE /* Certificate.cpp in Sources */,
+				032464E523E1F97100D7BBEE /* Graph.cpp in Sources */,
 				032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
