@@ -10,5 +10,20 @@
 #define Event_hpp
 
 #include <stdio.h>
+class Event {
+public:
+    const float time;
+    enum EventType {Addition, Deletion, CertificateFailure};
+    const EventType type;
+    
+    //If type = Addition, parameters = [u,v,a,b]
+    //If type = Deletion, parameters = [u,v]
+    //If type = CertFail, parameters = [Certificate]
+    const int parameters[];
+    
+    Event createAddition(const float t, const int& u, const int& v, const int& a, const int& b);
+    Event createDeletion(const float t, const int& u, const int& v);
+    Event createCertificateFailure(const float t, const Certificate cert);
+};
 
 #endif /* Event_hpp */

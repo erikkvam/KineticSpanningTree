@@ -7,15 +7,3 @@
 //
 
 #include "Event.hpp"
-class Event {
-public: float time;
-    enum EventType {Addition, Deletion, CertificateFailure};
-    EventType type;
-    
-    //If type = Addition, parameters = [u,v,a,b]
-    //If type = Deletion, parameters = [u,v]
-    //If type = CertFail, parameters = [Certificate]
-    int parameters[];
-    
-    Event(EventType eventType, float t);
-};
