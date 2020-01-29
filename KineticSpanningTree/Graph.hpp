@@ -17,5 +17,9 @@ private:
     list<list<int>> E;
     
     int w[][];
+    
+    bool add(const int& u, const int& v, const int& a, const int& b);
+    bool del(const int& u, const int& v);
+    bool modify(const int& u, const int& v, const int& a, const int& b);
 }
 #endif /* Graph_hpp */
