@@ -10,5 +10,8 @@
 #define Certificate_hpp
 
 #include <stdio.h>
+class Certificate {
+    const int u, v, x, y;
+};
 
 #endif /* Certificate_hpp */
