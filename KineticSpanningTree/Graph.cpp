@@ -8,6 +8,11 @@
 
 #include "Graph.hpp"
 #include <iterator>
+Graph::Graph(){
+    V.clear();
+    Ew.clear();
+}
+
 bool Graph::add(const int& u, const int& v, const int& a, const int& b){
     if (inV(u) and inV(v) and not inE(u,v)) {
         pair<int,int> ab = pair<int,int>(a,b);

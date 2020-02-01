@@ -19,6 +19,7 @@ private:
     list<list<pair<int,pair<int,int>>>> Ew; //Ew[v] = (u,(a,b)) if there exists an edge uv with cost at+b
     
 public:
+    Graph();
     bool add(const int& u, const int& v, const int& a, const int& b);
     bool del(const int& u, const int& v);
     bool modify(const int& u, const int& v, const int& a, const int& b);
