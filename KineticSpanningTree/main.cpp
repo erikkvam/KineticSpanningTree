@@ -9,8 +9,19 @@
 #include "KineticSpanningTree.hpp"
 #include <string>
 #include <iostream>
+#include "Graph.cpp"
+
+
+void testGraph(){
+    //create a Graph
+    Graph g = Graph();
+}
+
 
 int main() {
-    //KineticSpanningTree kds = KineticSpanningTree("example");
-    //kds.print();
+    testGraph();
+//    testCertificate();
+//    testEvent();
+//    testKineticSpanningTree();
 }
+
