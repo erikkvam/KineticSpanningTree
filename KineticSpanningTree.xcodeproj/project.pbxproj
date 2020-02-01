@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032464E523E1F97100D7BBEE /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E323E1F97100D7BBEE /* Graph.cpp */; };
-		032464E823E1F99400D7BBEE /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E623E1F99400D7BBEE /* Event.cpp */; };
-		032464EB23E1F9A600D7BBEE /* Certificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032464E923E1F9A600D7BBEE /* Certificate.cpp */; };
 		032CD8FB2374712B00D40E32 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD8FA2374712B00D40E32 /* main.cpp */; };
-		032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CD90923747C3600D40E32 /* KineticSpanningTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		032CD8F52374712B00D40E32 /* CopyFiles */ = {
+		032CD8F52374712B00D40E32 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -91,7 +88,7 @@
 			buildPhases = (
 				032CD8F32374712B00D40E32 /* Sources */,
 				032CD8F42374712B00D40E32 /* Frameworks */,
-				032CD8F52374712B00D40E32 /* CopyFiles */,
+				032CD8F52374712B00D40E32 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -139,11 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032464E823E1F99400D7BBEE /* Event.cpp in Sources */,
 				032CD8FB2374712B00D40E32 /* main.cpp in Sources */,
-				032464EB23E1F9A600D7BBEE /* Certificate.cpp in Sources */,
-				032464E523E1F97100D7BBEE /* Graph.cpp in Sources */,
-				032CD90B23747C3600D40E32 /* KineticSpanningTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +259,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCGM6J7RE7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -277,6 +271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCGM6J7RE7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
