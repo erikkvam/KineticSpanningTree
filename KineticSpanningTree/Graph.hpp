@@ -26,5 +26,13 @@ public:
     
     bool inV(const int& v);
     bool inE(const int& u, const int& v);
+    
+    struct swap {
+        int cost;
+        int u,v;
+        int x,y;
+    };
+    swap findBestSwap();
+    void performSwap(swap s);
 };
 #endif /* Graph_hpp */
