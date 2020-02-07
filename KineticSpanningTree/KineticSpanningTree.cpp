@@ -42,3 +42,19 @@ void KineticSpanningTree::evaluate(const Event& event){
             break;
     }
 }
+
+void KineticSpanningTree::updateStructuresOnAddition(Event event){
+    int u = event.parameters[0];
+    int v = event.parameters[1];
+    int a = event.parameters[2];
+    int b = event.parameters[3];
+    
+    //Update the structures
+    G.add(u, v, a, b);
+    
+    //Find and execute non-positive swaps
+    Graph::swap bestSwap = G.findBestSwap();
+    if (bestSwap.cost < 0) {
+        G.performSwap(bestSwap);
+    }
+}
