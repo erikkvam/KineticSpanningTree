@@ -8,7 +8,7 @@
 
 #include <string>
 #include <iostream>
-#include "Graph.cpp"
+#include "KineticSpanningTree.cpp"
 
 
 void testGraph(){
@@ -17,13 +17,17 @@ void testGraph(){
     cout << "testGraph: Graph created" << endl;
 }
 
+void testKineticSpanningTree(){
+    KineticSpanningTree KST;
+}
+
 
 int main() {
     cout << "main: Starting tests" << endl;
-    testGraph();
+//    testGraph();
 //    testCertificate();
 //    testEvent();
-//    testKineticSpanningTree();
+    testKineticSpanningTree();
     cout << "main: All tests OK" << endl;
 }
 
