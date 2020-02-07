@@ -7,7 +7,7 @@
 //
 
 #include "Certificate.hpp"
-Certificate::Certificate(const int& uu,const int& vv,const int& xx,const int& yy){
+Certificate::Certificate(int uu, int vv, int xx, int yy){
     u = uu;
     v = vv;
     x = xx;

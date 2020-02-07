@@ -13,18 +13,19 @@
 #include "Certificate.cpp"
 class Event {
 public:
-    const float time;
+    float time;
     enum EventType {Addition, Deletion, CertificateFailure};
-    const EventType type;
+    EventType type;
     
     //If type = Addition, parameters = [u,v,a,b]
     //If type = Deletion, parameters = [u,v]
-    //If type = CertFail, parameters = [Certificate]
-    const int parameters[];
+    //If type = CertFail, parameters = [u,v,x,y] and certificate = Certificate which fails
+    Certificate certificate = Certificate(0, 0, 0, 0);
+    int parameters[];
     
-    Event createAddition(const float t, const int& u, const int& v, const int& a, const int& b);
-    Event createDeletion(const float t, const int& u, const int& v);
-    Event createCertificateFailure(const float t, const Certificate cert);
+    static Event createAddition(float t, int u, int v, int a, int b);
+    static Event createDeletion(const float t, const int& u, const int& v);
+    static Event createCertificateFailure(const float t, const Certificate cert);
 };
 
 #endif /* Event_hpp */
