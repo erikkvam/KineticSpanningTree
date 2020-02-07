@@ -23,5 +23,11 @@ public:
     void addEdge(const int& u, const int& v, const int& a, const int& b);
     void deleteEdge(const int& u, const int& v);
     void modifyEdge(const int& u, const int& v, const int& a, const int& b);
+    
+    void updateStructuresOnAddition(Event event);
+    void updateStructuresOnDeletion(Event event);
+    void updateStructuresOnFailure(Event event);
+    
+    void replaceWithBest(int u, int v);
 };
 #endif /* KineticSpanningTree_hpp */

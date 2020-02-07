@@ -23,18 +23,18 @@ void KineticSpanningTree::modifyEdge(const int& u, const int& v, const int& a, c
 void KineticSpanningTree::evaluate(const Event& event){
     switch (event.type) {
         case Event::Addition:
-            G.updateStructuresOnAddition(event);
+            updateStructuresOnAddition(event);
             break;
             
         case Event::Deletion:
-            G.updateStructuresOnDeletion(event);
+            updateStructuresOnDeletion(event);
             if (MST.inE(event.parameters[0],event.parameters[1])) {
                 replaceWithBest(event.parameters[0],event.parameters[1]);
             }
             break;
         
         case Event::CertificateFailure:
-            processCertificateFailure(event);
+            updateStructuresOnFailure(event);
             break;
 
 
