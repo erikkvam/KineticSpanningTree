@@ -27,10 +27,10 @@ void KineticSpanningTree::evaluate(const Event& event){
             break;
             
         case Event::Deletion:
-            updateStructuresOnDeletion(event);
             if (MST.inE(event.parameters[0],event.parameters[1])) {
                 replaceWithBest(event.parameters[0],event.parameters[1]);
             }
+            updateStructuresOnDeletion(event);
             break;
         
         case Event::CertificateFailure:
@@ -57,4 +57,8 @@ void KineticSpanningTree::updateStructuresOnAddition(Event event){
     if (bestSwap.cost < 0) {
         performSwap(bestSwap);
     }
+}
+
+void KineticSpanningTree::updateStructuresOnDeletion(Event event){
+    G.del(event.parameters[0], event.parameters[1]);
 }
