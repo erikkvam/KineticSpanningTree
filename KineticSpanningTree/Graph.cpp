@@ -53,3 +53,12 @@ bool Graph::inE(const int& u, const int& v){
     }
     return false;
 }
+
+pair<int, int> Graph::getCostFunction(const int&u, const int& v){
+    list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
+    list<pair<int,pair<int,int>>>::iterator vPos = next((*uPos).begin(),v);
+    pair<int,int> toReturn;
+    toReturn.first = (*vPos).second.first;
+    toReturn.second = (*vPos).second.second;
+    return toReturn;
+}
