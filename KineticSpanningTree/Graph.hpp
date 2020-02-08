@@ -26,6 +26,7 @@ public:
     
     bool inV(const int& v);
     bool inE(const int& u, const int& v);
+    pair<int, int> getCostFunction(const int&u, const int& v);
     
     struct swap {
         int cost;

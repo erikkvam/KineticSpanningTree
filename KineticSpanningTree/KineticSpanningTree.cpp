@@ -74,3 +74,10 @@ void KineticSpanningTree::updateStructuresOnFailure(Event event){
     
     performSwap(s);
 }
+
+void KineticSpanningTree::performSwap(Graph::swap s){
+    pair<int,int> cost = G.getCostFunction(s.x,s.y);
+    
+    MST.del(s.u, s.v);
+    MST.add(s.x, s.y, cost.first, cost.second);
+}
