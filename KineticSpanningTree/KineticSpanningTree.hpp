@@ -29,5 +29,6 @@ public:
     void updateStructuresOnFailure(Event event);
     
     void replaceWithBest(int u, int v);
+    void performSwap(Graph::swap s);
 };
 #endif /* KineticSpanningTree_hpp */

@@ -55,6 +55,6 @@ void KineticSpanningTree::updateStructuresOnAddition(Event event){
     //Find and execute non-positive swaps
     Graph::swap bestSwap = G.findBestSwap();
     if (bestSwap.cost < 0) {
-        G.performSwap(bestSwap);
+        performSwap(bestSwap);
     }
 }
