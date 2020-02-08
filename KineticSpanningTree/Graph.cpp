@@ -29,6 +29,19 @@ bool Graph::add(const int& u, const int& v, const int& a, const int& b){
     }
 }
 
+bool Graph::del(const int& u, const int& v){
+    if (inV(u) and inV(v) and inE(u,v)){
+        list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
+        list<pair<int,pair<int,int>>>::iterator vPos = next((*uPos).begin(),v);
+        (*uPos).erase(vPos);
+        
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 bool Graph::inV(const int& v){
     return V.count(v) > 0;
 }
