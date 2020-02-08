@@ -11,13 +11,14 @@
 
 #include <stdio.h>
 #include <set>
+#include <map>
 #include <list>
 using namespace std;
 
 class Graph {
 private:
     set<int> V;
-    list<list<pair<int,pair<int,int>>>> Ew; //Ew[v] = (u,(a,b)) if there exists an edge uv with cost at+b
+    map<int, map<int, pair<int,int>>> Ew; //Ew[v] = (u,(a,b)) if there exists an edge uv with cost at+b
     
 public:
     Graph();

@@ -15,14 +15,8 @@ Graph::Graph(){
 
 bool Graph::add(const int& u, const int& v, const int& a, const int& b){
     if (inV(u) and inV(v) and not inE(u,v)) {
-        pair<int,int> ab = pair<int,int>(a,b);
-        
-        list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
-        (*uPos).push_back(pair<int, pair<int,int>>(v,ab));
-        
-        list<list<pair<int,pair<int,int>>>>::iterator vPos = next(Ew.begin(),v);
-        (*vPos).push_back(pair<int, pair<int,int>>(u,ab));
-        
+        Ew[u][v] = pair<int,int>(a,b);
+        Ew[v][u] = pair<int,int>(a,b);
         return true;
     } else {
         return false;
@@ -31,10 +25,8 @@ bool Graph::add(const int& u, const int& v, const int& a, const int& b){
 
 bool Graph::del(const int& u, const int& v){
     if (inV(u) and inV(v) and inE(u,v)){
-        list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
-        list<pair<int,pair<int,int>>>::iterator vPos = next((*uPos).begin(),v);
-        (*uPos).erase(vPos);
-        
+        Ew[u].erase(v);
+        Ew[v].erase(u);
         return true;
     } else {
         return false;
@@ -47,18 +39,9 @@ bool Graph::inV(const int& v){
 }
 
 bool Graph::inE(const int& u, const int& v){
-    list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
-    for (pair<int,pair<int,int>> vertex : (*uPos)) {
-        if (vertex.first == v) return true;
-    }
-    return false;
+    return Ew[u].count(v);
 }
 
 pair<int, int> Graph::getCostFunction(const int&u, const int& v){
-    list<list<pair<int,pair<int,int>>>>::iterator uPos = next(Ew.begin(),u);
-    list<pair<int,pair<int,int>>>::iterator vPos = next((*uPos).begin(),v);
-    pair<int,int> toReturn;
-    toReturn.first = (*vPos).second.first;
-    toReturn.second = (*vPos).second.second;
-    return toReturn;
+    return Ew[u][v];
 }
