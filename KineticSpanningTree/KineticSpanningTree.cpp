@@ -62,3 +62,15 @@ void KineticSpanningTree::updateStructuresOnAddition(Event event){
 void KineticSpanningTree::updateStructuresOnDeletion(Event event){
     G.del(event.parameters[0], event.parameters[1]);
 }
+
+void KineticSpanningTree::updateStructuresOnFailure(Event event){
+    Graph::swap s;
+    s.u = event.parameters[0];
+    s.v = event.parameters[1];
+    s.x = event.parameters[2];
+    s.y = event.parameters[3];
+    
+    s.cost = 0;
+    
+    performSwap(s);
+}
